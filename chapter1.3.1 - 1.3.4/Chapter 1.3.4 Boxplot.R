@@ -1,0 +1,14 @@
+#### boxplot
+fivenum(hb)
+
+par(mfrow=c(1,1))
+boxplot(hb, horizontal = TRUE, main="Modern Englishman", xlab= "head breadth (mm)")
+
+library(ggplot2)
+hb_df <- data.frame(hb)
+p <- ggplot(hb_df, aes(x = "hb", y = hb))
+p <- p + geom_boxplot()
+p <- p + coord_flip()
+p <- p + labs(title = "Modern Englishman head breadth")
+print(p)
+
